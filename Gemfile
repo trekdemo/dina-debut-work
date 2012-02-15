@@ -16,11 +16,14 @@ group :assets do
 end
 
 group :test do
+  gem 'rspec-rails'
   gem 'cucumber-rails'
   gem 'spork'
 end
 
 group :development do
+  gem 'growl'
   gem 'guard'
   gem 'guard-cucumber'
 end
+
