@@ -53,12 +53,22 @@ Feature: Numbers can be presented as enlish words
       | 80     | "eighty"      |
       | 90     | "ninety"      |
 
-  Scenario Outline: Present numbers 100-999
+  Scenario Outline: Present numbers between 100-999
     When I present <number> as english number
     Then I should get <name>
     Examples:
-      | number   | name                        |
-      | 100      | "hundred"                   |
-      | 200      | "two hundred"               |
-      | 719      | "seven hundred and nineteen"|
+      | number   | name                            |
+      | 100      | "hundred"                       |
+      | 300      | "three hundred"                 |
+      | 512      | "five hundred and twelve"       |
+      | 888      | "eight hundred and eighty-eight"|
+
+  Scenario Outline: Present random big numbers
+    When I present <number> as english number
+    Then I should get <name>
+    Examples:
+      | number   | name                                        |
+      | 1001     | "one thousand and one"                      |
+      | 21103    | "twenty-one thousand one hundred and three" |
+      | 88888888 | "eighty-eight million eight hundred and eighty-eight thousand eight hundred and eighty-eight"                   |
 
