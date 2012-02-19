@@ -1,0 +1,6 @@
+<%= form_tag root_path do %>
+  <%= number_field_tag :number, @number, { min: 0, class: 'number' } %>
+  <%= submit_tag 'Convert' %>
+<% end %>
+
+<span class="result"><%= @english_number %></span>
